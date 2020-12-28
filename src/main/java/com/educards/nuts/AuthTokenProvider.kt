@@ -5,19 +5,19 @@ import android.app.Activity
 interface AuthTokenProvider {
 
     /**
-     * This method retrieves [AuthToken] by using a configured provider.
+     * This method retrieves [AuthToken] from the authentication server.
      *
-     * The UI representation ("login screen") of the provider os optional. The
+     * The UI representation ("login screen") of the provider is optional. The
      * provider implementation without any UI is also valid.
      *
      * @param activity The [activity][Activity] which is currently started and which initiates
      * the network request requiring authentication.
      *
-     * TODO Describe all steps of authentication procedure.
+     * TODO Describe all steps of authentication procedure here.
      *
-     * @return Cached [AuthToken] or `null` if no [valid][AuthToken.expires] cached [AuthToken]
+     * @return Installed/cached [AuthToken] or `null` if no [valid][AuthToken.expires] cached [AuthToken]
      * exists.
      */
-    fun getAuthToken(activity: Activity): AuthToken?
+    fun getInstalledAuthToken(activity: Activity): AuthToken?
 
 }

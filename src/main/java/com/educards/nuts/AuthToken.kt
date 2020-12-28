@@ -10,8 +10,8 @@ data class AuthToken(
 ) {
 
     data class UserCredentials(
-        val id: String?,
-        val fullName: String?,
+        val firstName: String?,
+        val lastName: String?,
         val login: String?,
         val email: String?
     )
