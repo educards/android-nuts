@@ -10,8 +10,8 @@ interface Template<S> {
 
     fun onRequestInProgress()
 
-    fun onRequestSucceeded(responseData: S)
+    fun onRequestSucceeded(responseData: S?)
 
-    fun onRequestFailed(failData: FailData)
+    fun onRequestFailed(requestFailData: RequestFailData)
 
 }
