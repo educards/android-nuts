@@ -16,4 +16,17 @@ data class AuthToken(
         val email: String?
     )
 
+    /**
+     * Checks whether token is considered expired in a given time.
+     *
+     * **Note**: If the token provider didn't explicitly specify the validity
+     * of this token, then it's validity can't be checked locally and this
+     * method always returns [false].
+     *
+     * @param nowMs Current time provided by relevant time provider.
+     */
+    fun isExpired(nowMs: Long): Boolean {
+        return expires != null && expires < nowMs
+    }
+
 }
